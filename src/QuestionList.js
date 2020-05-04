@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {getAnswersForQuestion} from './Quiz-helpers'
 import QuizQuestion from './dummy-store/QuizQuestion'
-//import BookmarksContext from '../BookmarksContext';
-//import BookmarkItem from '../BookmarkItem/BookmarkItem';
 
 export default class QuestionList extends React.Component {
     static defaultProps = {
@@ -47,27 +45,9 @@ export default class QuestionList extends React.Component {
                   </li>
                   )}  
                   </p>
-
-                  <p>
-                {answers.map( answer=>
-          <li key={answer.id}>
-            <Link to={`/answers/${answer.id}`}>
-              {answer.content}
-            </Link>
-          </li>
-        )}
-                </p>
                 <label htmlFor='answer-select'>
               Choose An answer:
             </label>
-                <select id='answer-select'>
-                <option value={null}>...</option>
-              {answers.map(answer =>
-                <option key={answers.id} value={answers.id}>
-                  {answers.content}
-                </option>
-              )}
-                </select>
                 </div>
             <div className='buttons'>
             <button tag={Link}

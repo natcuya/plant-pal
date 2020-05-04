@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import Nav from './Nav'
-import {getAnswersForQuestions, findAnswers, findQuestions} from './Quiz-helpers';
+import { findAnswers, findQuestion, getAnswersForQuestion} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
 import QuestionList from './QuestionList'
+import QuestionsList from './QuestionsList'
+import QuestionMain from './QuestionMain'
+import QuizList from './QuizList'
 import QuizQuestion from './dummy-store/QuizQuestion'
 
 
@@ -23,50 +26,52 @@ export default class App extends Component {
 //commit things in sections to prevent from breaking code 
 //in route call the component which will then have the id of the question. 
 //need to  use findQuestions 
- /* renderQuizRoutes(){
-    const {questions, answers} = this.state
-    return(
-      <>
-      {['/', '/question/:questionId'].map(path => 
-          <Route  key={path}
-            path={path}
-            render={routeProps => {
-            const {questionId} = routeProps.match.params;
-
-            const answersForQuestions = getAnswersForQuestions(answers, questionId)
-            return (
-           <QuestionList
-            {...routeProps}
-            answers={answersForQuestions}
-          />
-             )
-           }}
-           />
-      )}
-           <Route
-           path='/answer/:answerId'
-           render={routeProps => {
-             const { answerId } = routeProps.match.params
-             const answer = findAnswers(answers, answerId)|| {}
-             return (
-               <QuestionList
-                 {...routeProps}
-                 answer={answer}
-               />
-             )}}/>
-         </>
-    )   
-  }
-  
-*/
+ 
+renderQuizRoutes() {
+  const { answers, questions } = this.state
+  return (
+    <>
+      <Route
+        path='/answer/:answerId'
+        render={routeProps => {
+          const { answerId } = routeProps.match.params
+          const answer = findAnswers(answers, answerId) || {}
+          const question = findQuestion(questions, answer.questionId)
+          return (
+            <QuestionMain
+              {...routeProps}
+              question={question}
+            />
+          )
+        }}
+      />
+    </>
+  )
+}
 
 renderQuizQuestionRoutes(){
+  const { questions, answers} = this.state
     return(
-      <Route path ={'/question/:questionId'} 
-      component = {QuestionList}
-      />
+      <>
+     {['/', '/question/:questionId'].map(path =>
+          <Route
+            exact
+            key={path}
+            path={path}
+            render={routeProps => {
+              const { questionId } = routeProps.match.params
+              const answersForQuestion = getAnswersForQuestion(answers, questionId)
+              return (
+                <QuizList
+                  {...routeProps}
+                  answers={answersForQuestion}
+                />
+              )
+            }}
+          />
+        )}
+      </>
     )
-
 }
 
 
@@ -75,12 +80,14 @@ renderQuizQuestionRoutes(){
       <div className='App'>
         <nav>
           <Nav classNAame='App_nav'>
+          {this.renderQuizRoutes()}
+
           </Nav>
         </nav>
         <main>
         <Route path='/quiz' component={QuestionList} />
-        <Route exact path='/' component={LandingPage} />
         {this.renderQuizQuestionRoutes()}
+        <Route exact path='/' component={LandingPage} />
         </main>
         <footer>
           Footer
