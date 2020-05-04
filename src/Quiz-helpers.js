@@ -4,7 +4,7 @@ export const findQuestion = (questions=[], questionId) =>
 export const findAnswers = (answers=[], answerId) =>
   answers.find(answer => answer.id === answerId)
 
-export const getAnswersForQuestions = (answers=[], questionId) => (
+export const getAnswersForQuestion = (answers=[], questionId) => (
   (!questionId)
     ? answers
     : answers.filter(answer => answer.questionId === questionId)

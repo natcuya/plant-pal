@@ -70,9 +70,6 @@ renderQuizQuestionRoutes(){
 }
 
 
-
-
- 
   render() {
     return (
       <div className='App'>
