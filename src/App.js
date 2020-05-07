@@ -4,8 +4,7 @@ import Nav from './Nav'
 import { findAnswers, findQuestion, getAnswersForQuestion} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
 import QuestionList from './QuestionList'
-import QuestionsList from './QuestionsList'
-import QuestionMain from './QuestionMain'
+import BrowsePage from './BrowsePage'
 import QuizList from './QuizList'
 import QuizQuestion from './dummy-store/QuizQuestion'
 
@@ -27,27 +26,6 @@ export default class App extends Component {
 //in route call the component which will then have the id of the question. 
 //need to  use findQuestions 
  
-renderQuizRoutes() {
-  const { answers, questions } = this.state
-  return (
-    <>
-      <Route
-        path='/answer/:answerId'
-        render={routeProps => {
-          const { answerId } = routeProps.match.params
-          const answer = findAnswers(answers, answerId) || {}
-          const question = findQuestion(questions, answer.questionId)
-          return (
-            <QuestionMain
-              {...routeProps}
-              question={question}
-            />
-          )
-        }}
-      />
-    </>
-  )
-}
 
 renderQuizQuestionRoutes(){
   const { questions, answers} = this.state
@@ -80,13 +58,13 @@ renderQuizQuestionRoutes(){
       <div className='App'>
         <nav>
           <Nav classNAame='App_nav'>
-          {this.renderQuizRoutes()}
-
           </Nav>
         </nav>
         <main>
         <Route path='/quiz' component={QuestionList} />
-        {this.renderQuizQuestionRoutes()}
+        <Route path='/browse' component={BrowsePage} />
+        <Route path='/question/:questionId' component= {QuizList}/>
+        
         <Route exact path='/' component={LandingPage} />
         </main>
         <footer>

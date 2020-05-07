@@ -1,8 +1,9 @@
 import Content from './Content'
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import {getAnswersForQuestion} from './Quiz-helpers'
 import QuizQuestion from './dummy-store/QuizQuestion'
+import Answer from './Answer'
 
 export default class QuestionList extends React.Component {
     static defaultProps = {
@@ -61,6 +62,9 @@ export default class QuestionList extends React.Component {
 
         )
     }
+
+
+  
     // //calling your question component, passing in one of my questions which is composed of question and answer choices. 
     //use the curriculum, try to havethat submit
 }
