@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    padding: 1% 0;
+    background-color: #aaa;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    font-size: 1.2pc;
+  }
+
+  a {
+    PADDING: 10PX;
+  }

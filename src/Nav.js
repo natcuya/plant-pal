@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Content from './Content'
+import './Nav.css'
 export default class Nav extends Component {
     render() {
       return (
@@ -12,9 +13,6 @@ export default class Nav extends Component {
           </a>
           <a href='/browse'>
             Browse
-          </a>
-          <a href='/login'>
-            Login
           </a>
         </Content>
       )
