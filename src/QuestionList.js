@@ -1,7 +1,8 @@
 import Content from './Content'
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
-import {getAnswersForQuestion} from './Quiz-helpers'
+import QuizList from './QuizList'
+import {getAnswersForQuestion, findQuestion} from './Quiz-helpers'
 import QuizQuestion from './dummy-store/QuizQuestion'
 import Answer from './Answer'
 
@@ -22,6 +23,7 @@ export default class QuestionList extends React.Component {
 //commit to github!!!!! once it works commit then make changes
 
     render(){
+     
         const questions = QuizQuestion.questions
         const {questionId} = this.props.match.params
         const answers = QuizQuestion.answers
@@ -46,17 +48,16 @@ export default class QuestionList extends React.Component {
                   </li>
                   )}  
                   </p>
-                <label htmlFor='answer-select'>
-              Choose An answer:
-            </label>
                 </div>
             <div className='buttons'>
+              
             <button tag={Link}
           to='/results' type='submit'>
              Submit
             </button>
             </div>
         </Content>
+        <Answer>zzz</Answer>
          </section>
       
 

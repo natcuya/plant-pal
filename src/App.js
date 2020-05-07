@@ -37,12 +37,16 @@ renderQuizQuestionRoutes(){
             key={path}
             path={path}
             render={routeProps => {
+              const { answerId } = routeProps.match.params
+            const answer = findAnswers(answers, answerId) || {}
+            const question = findQuestion(questions, answer.questionId)
               const { questionId } = routeProps.match.params
               const answersForQuestion = getAnswersForQuestion(answers, questionId)
               return (
                 <QuizList
                   {...routeProps}
                   answers={answersForQuestion}
+                  question={question}
                 />
               )
             }}
