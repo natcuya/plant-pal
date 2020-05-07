@@ -1,0 +1,10 @@
+.QuizList {
+    padding: 0.5rem 2.5rem 1.5rem 2.5rem;
+    margin: 5px;
+    list-style-type: none;
+   
+}
+.radioCustomButton {
+position: absolute;
+left: 20px;
+  }

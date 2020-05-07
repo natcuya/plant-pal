@@ -38,20 +38,31 @@ renderQuizQuestionRoutes(){
             path={path}
             render={routeProps => {
               const { answerId } = routeProps.match.params
-            const answer = findAnswers(answers, answerId) || {}
-            const question = findQuestion(questions, answer.questionId)
               const { questionId } = routeProps.match.params
               const answersForQuestion = getAnswersForQuestion(answers, questionId)
               return (
                 <QuizList
                   {...routeProps}
                   answers={answersForQuestion}
-                  question={question}
                 />
               )
             }}
-          />
+          /> 
         )}
+        <Route
+          path='/answer/:answerId'
+          render={routeProps => {
+            const { answerId } = routeProps.match.params
+            const answer = findAnswers(answers, answerId) || {}
+            const question = findQuestion(questions, answer.questionId)
+            return (
+              <QuizList
+                {...routeProps}
+                question={question}
+              />
+            )
+          }}
+        />
       </>
     )
 }
@@ -67,8 +78,8 @@ renderQuizQuestionRoutes(){
         <main>
         <Route path='/quiz' component={QuestionList} />
         <Route path='/browse' component={BrowsePage} />
+        <Route path='/answer/:answerId' component= {QuizList}/>
         <Route path='/question/:questionId' component= {QuizList}/>
-        
         <Route exact path='/' component={LandingPage} />
         </main>
         <footer>

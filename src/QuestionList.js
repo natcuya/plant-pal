@@ -40,27 +40,15 @@ export default class QuestionList extends React.Component {
             <div className='field'>
                 <h2>Plant Pal Questionnaire</h2>
                 <p>
-                {questions.map( question=>
-                   <li key={question.id}>
-                  <Link to={`/question/${question.id}`}>
-                  {question.info}
+                To ensure we find your perfect match, take our quiz. The quiz will match a plant suited to your environmental constraints. 
+                  <Link to={'/question/:questionId'}>
+                  {"Start Here"}
                   </Link>
-                  </li>
-                  )}  
+                
                   </p>
                 </div>
-            <div className='buttons'>
-              
-            <button tag={Link}
-          to='/results' type='submit'>
-             Submit
-            </button>
-            </div>
         </Content>
-        <Answer>zzz</Answer>
          </section>
-      
-
         )
     }
 
