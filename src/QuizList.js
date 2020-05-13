@@ -26,6 +26,7 @@ export default class QuizList extends React.Component {
         })
       }
     
+      //implement api context - we changing stats so this could be useful
       
     //will not be props but instead answersForQuestion.map
     render () {
@@ -76,3 +77,5 @@ export default class QuizList extends React.Component {
   //const answersForQuestion = getAnswersForQuestion(answers, questionId)
   //import helper
   //will need to access questions - needs to also show questions (possibly line 11) - need to have both on screeen
+
+  //need to keep track of what user selected - that is how you will get results - need to update state

@@ -9,7 +9,6 @@ import QuizList from './QuizList'
 import QuizQuestion from './dummy-store/QuizQuestion'
 import './App.css'
 
-
 export default class App extends Component {
   state = {
     questions: [],
