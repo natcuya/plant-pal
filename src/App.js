@@ -1,85 +1,97 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import Nav from './Nav'
-import { findAnswers, findQuestion, getAnswersForQuestion} from './Quiz-helpers';
+import { getNotesForPlant, findNotes, findPlant} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
-import QuestionList from './QuestionList'
 import BrowsePage from './BrowsePage'
-import QuizList from './QuizList'
-import QuizQuestion from './dummy-store/QuizQuestion'
+import QuizPage from './QuizPage'
+import PlantPage from './PlantPage'
 import './App.css'
+import BrowseData from './dummy-store/BrowseData'
 
 export default class App extends Component {
   state = {
-    questions: [],
-    answers: []
+    plants: [],
+    notes: []
   };
 
-  componentDidMount() {
-      // fake date loading from API call
-      //const setAnswers = questions.map(info => this.setState(info.answers))
-      setTimeout(() => this.setState(QuizQuestion), 600)
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      answersCount: {},
+      result: ''
+    };
   }
+
 //only route needed is the question and question id 
 //commit things in sections to prevent from breaking code 
 //in route call the component which will then have the id of the question. 
 //need to  use findQuestions 
- 
-
-renderQuizQuestionRoutes(){
-  const { questions, answers} = this.state
+componentDidMount() {
+  // fake date loading from API call
+  //const setAnswers = questions.map(info => this.setState(info.answers))
+  setTimeout(() => this.setState(BrowseData), 600)
+}
+renderBrowsePageRoutes(){
+  const { plants, notes} = this.state
     return(
       <>
-     {['/', '/question/:questionId'].map(path =>
+     {['/', '/plant/:plantId'].map(path =>
           <Route
             exact
             key={path}
             path={path}
             render={routeProps => {
-              const { answerId } = routeProps.match.params
-              const { questionId } = routeProps.match.params
-              const answersForQuestion = getAnswersForQuestion(answers, questionId)
+              const { noteId } = routeProps.match.params
+              const { plantId } = routeProps.match.params
+              const notesForPlant = getNotesForPlant(notes, plantId)
               return (
-                <QuizList
+                <PlantPage
                   {...routeProps}
-                  answers={answersForQuestion}
+                  notes={notesForPlant}
                 />
               )
             }}
           /> 
         )}
         <Route
-          path='/answer/:answerId'
+          path='/note/:noteId'
           render={routeProps => {
-            const { answerId } = routeProps.match.params
-            const answer = findAnswers(answers, answerId) || {}
-            const question = findQuestion(questions, answer.questionId)
+            const { noteId } = routeProps.match.params
+            const note = findNotes(notes, noteId) || {}
+            const plant = findPlant(plants, note.plantId)
             return (
-              <QuizList
+              <PlantPage
                 {...routeProps}
-                question={question}
+                plant={plant}
               />
             )
           }}
         />
+
       </>
     )
 }
-
 
   render() {
     return (
       <div className='App'>
         <nav>
-          <Nav classNAame='App_nav'>
+          <Nav className='App_nav'>
           </Nav>
         </nav>
         <main>
-        <Route path='/quiz' component={QuestionList} />
+        <Route path='/quiz' component={QuizPage} />
         <Route path='/browse' component={BrowsePage} />
-        <Route path='/answer/:answerId' component= {QuizList}/>
-        <Route path='/question/:questionId' component= {QuizList}/>
         <Route exact path='/' component={LandingPage} />
+        <Route path='/note/:noteId' component= {PlantPage}/>
+        <Route path='/plant/:plantId' component={PlantPage} />
         </main>
         <footer>
           Footer

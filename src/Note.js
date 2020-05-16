@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Answer(props) {
+export default function Note(props) {
     return (
-      <div className='Answer'>
-        <h2 className='Answer__content'>
+      <div className='Plant'>
+        <h2 className='Plant__content'>
             {props.content}
         </h2>
       </div>

@@ -1,0 +1,25 @@
+img {
+    width: 170px;
+    height: 170px;
+    padding: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    display: block;
+    font-size: 25px;
+}
+
+p{
+    padding: 3px;
+    font-size: 18px;
+    text-align: left;
+    margin: 15px;
+}
+
+.level {
+    margin: 0px;
+    text-align: center;
+}

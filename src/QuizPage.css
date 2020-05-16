@@ -1,0 +1,8 @@
+.QuizPage{
+    list-style-type: none;
+}
+.answerOptions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }

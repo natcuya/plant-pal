@@ -31,16 +31,19 @@
     padding: 45px 15px;
   }
   
-  section:nth-child(even) {
-    background-color: #ddd;
+  p{
+      text-align: left;
+      font-size: 15px;
+      margin: 10px;
   }
-  
-  p {
-    margin-TOP: 20PX;
-    max-width: 650px;
+
+  h2{
+      margin-top: 50px;
+      font-size: 30px;
   }
-  
-  p + p {
-    margin-top: 15px;
+  h3,h4{
+    font-size: 25px;
+    margin: 15px; 
+    text-align: left;
+    
   }
-  

@@ -1,11 +1,11 @@
-export const findQuestion = (questions=[], questionId) =>
-  questions.find(question => question.id === questionId)
+export const findPlant = (plants=[], plantId) =>
+  plants.find(plant => plant.id === plantId)
 
-export const findAnswers = (answers=[], answerId) =>
-  answers.find(answer => answer.id === answerId)
+export const findNotes = (notes=[], noteId) =>
+notes.find(note => note.id === noteId)
 
-export const getAnswersForQuestion = (answers=[], questionId) => (
-  (!questionId)
-    ? answers
-    : answers.filter(answer => answer.questionId === questionId)
+export const getNotesForPlant = (notes=[], plantId) => (
+  (!plantId)
+    ? notes
+    : notes.filter(note => note.plantId === plantId)
 )
