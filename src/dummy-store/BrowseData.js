@@ -72,26 +72,30 @@ export default {
             img:"https://www.growjoy.com/store/pc/catalog/string_of_pearls_plant_1352_detail.jpg"
         },      
     ],
-    "notes": [
+    "reviews": [
         {
         id: "1",
-        content: "lalalala",
-        plantId: "1"
+        content: "Love this Plant! So Easy to take of!",
+        plantId: "1",
+        rating: "4"
         },
         {
         id: "2",
-        content: "lbluva",
-        plantId: "2"
+        content: "Amazing! favorite in my collection",
+        plantId: "2",
+        rating: "3"
         },
         {
             id: "3",
-            content: "lbluva",
-            plantId: "3"
+            content: "Got it as a gift, great for the home!",
+            plantId: "3",
+            rating: "5"
             },
             {
                 id: "4",
-                content: "nui",
-                plantId: "4"
+                content: "Not my Fave",
+                plantId: "4",
+                rating: "5"
                 },
     ]
     }

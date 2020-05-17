@@ -9,7 +9,7 @@ export default class BrowsePage extends React.Component {
     constructor() {
         super()
     this.state = {
-        notes: [],
+        reviews: [],
         plants: [],
     }
 }
@@ -24,12 +24,11 @@ handleNextPlant = plant => {
     
   render () {
     const {plantId} = this.props.match.params
-    const {noteId } = this.props.match.params 
-    const notes = BrowseData.notes
-    const note = findNotes(notes, noteId) || {}
+    const {reviewId } = this.props.match.params 
+    const reviews = BrowseData.reviews
+    const review = findNotes(reviews, reviewId) || {}
     const plants = BrowseData.plants
-    const plant = findPlant(plants, note.plantId)
-    const notesForPlant = getNotesForPlant(notes, plantId)
+    //const plant = findPlant(plants, review.plantId)
 
     
         return (
@@ -45,7 +44,6 @@ handleNextPlant = plant => {
               <Link to={`/plant/${plant.id}`}> Plant Name: {plant.name}</Link>
               <img src ={plant.img} />
               <div className='field'>
-            <textarea id='note-content-input' />
           </div>
              <p className="level">Difficulty Level: {plant.type}</p>
              <p>Summary: {plant.content}</p> 

@@ -1,15 +1,25 @@
-import React from 'react';
-import './Rating.css';
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function Rating(props) {
-  const stars = [0, 0, 0, 0, 0].map((_, i) =>
-    (i < props.value)
-      ? <span key={i}>&#9733; </span>
-      : <span key={i}>&#9734; </span>
-  );
-  return (
-    <div className="rating">
-      {stars}
-    </div>
-  );
+export function Rating({rating}) {
+  const stars = [
+    { filled: false },
+    { filled: false },
+    { filled: false },
+    { filled: false },
+    { filled: false },
+  ]
+
+  for (let i = 0; i < rating; i++) {
+    stars[i].filled = true
+  }
+
+  return <span className='Rating'>
+    { stars.map((star, index) => <Star key={index} filled={star.filled} />) }
+  </span>
+}
+
+function Star({filled}) {
+  const library = filled ? 'fas' : 'far'
+  return <FontAwesomeIcon className='blue' icon={ [ library, 'star'  ]  } />
 }
