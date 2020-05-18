@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import Nav from './Nav'
+import config from './config'
 import { getNotesForPlant, findNotes, findPlant} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
 import BrowsePage from './BrowsePage'
@@ -8,6 +9,7 @@ import QuizPage from './QuizPage'
 import PlantPage from './PlantPage'
 import './App.css'
 import BrowseData from './dummy-store/BrowseData'
+import quizQuestions from './dummy-store/quizQuestions'
 
 export default class App extends Component {
   state = {
@@ -37,6 +39,7 @@ componentDidMount() {
   // fake date loading from API call
   //const setAnswers = questions.map(info => this.setState(info.answers))
   setTimeout(() => this.setState(BrowseData), 600)
+  setTimeout(() => this.setState(quizQuestions), 600)
 }
 renderBrowsePageRoutes(){
   const { plants, notes} = this.state
