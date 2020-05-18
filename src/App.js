@@ -16,6 +16,29 @@ export default class App extends Component {
     plants: [],
     notes: []
   };
+  componentDidMount() {
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/plants`),
+      fetch(`${config.API_ENDPOINT}/reviews`)
+    ])
+      .then(([reviewsRes, plantsRes]) => {
+        if (!reviewsRes.ok)
+          return reviewsRes.json().then(e => Promise.reject(e))
+        if (!plantsRes.ok)
+          return plantsRes.json().then(e => Promise.reject(e))
+
+        return Promise.all([
+          reviewsRes.json(),
+          plantsRes.json(),
+        ])
+      })
+      .then(([reviews, plants]) => {
+        this.setState({ reviews, plants })
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+  }
 
   constructor(props) {
     super(props);
