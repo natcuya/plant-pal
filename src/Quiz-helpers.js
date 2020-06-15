@@ -1,11 +1,13 @@
-export const findPlant = (plants=[], plantId) =>
-  plants.find(plant => plant.id === plantId)
+export const findPlant = (plants=[], plantid) =>
+  plants.find(plant => plant.id === plantid)
 
-export const findNotes = (reviews=[], reviewId) =>
-reviews.find(review => review.id === reviewId)
+export const findReviews = (reviews=[], reviewid) =>
+reviews.find(review => review.id === reviewid)
 
-export const getNotesForPlant = (reviews=[], plantId) => (
-  (!plantId)
+export const getReviewsForPlant = (reviews=[], plantid) => (
+  (!plantid)
     ? reviews
-    : reviews.filter(review => review.plantId === plantId)
+    : reviews.filter(review => review.plantid=== Number(plantid))
 )
+export const countReviewsForPlant = (reviews=[], plantid) =>
+  reviews.filter(review => review.plantid === Number(plantid)).length

@@ -2,24 +2,30 @@ import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import Nav from './Nav'
 import config from './config'
-import { getNotesForPlant, findNotes, findPlant} from './Quiz-helpers';
+import AddReview from './AddReview'
+import ApiContext from './ApiContext'
+import { getReviewsForPlant, findReviews, findPlant} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
-import BrowsePage from './BrowsePage'
+//import BrowsePage from './BrowsePage'
 import QuizPage from './QuizPage'
-import PlantPage from './PlantPage'
+//import PlantPage from './PlantPage'
+import ReviewListMain from './MainRoutes/ReviewListMain'
+import ReviewPageMain from './MainRoutes/ReviewPageMain'
+import ReviewListNav from './NavRoutes/ReviewListNav'
+import ReviewPageNav from './NavRoutes/ReviewPageNav'
+import Error from './Error'
 import './App.css'
-import BrowseData from './dummy-store/BrowseData'
 import quizQuestions from './dummy-store/quizQuestions'
 
 export default class App extends Component {
   state = {
+    reviews: [],
     plants: [],
-    notes: []
   };
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/plants`),
-      fetch(`${config.API_ENDPOINT}/reviews`)
+      fetch(`${config.API_ENDPOINT}/reviews`),
+      fetch(`${config.API_ENDPOINT}/plants`)
     ])
       .then(([reviewsRes, plantsRes]) => {
         if (!reviewsRes.ok)
@@ -54,16 +60,63 @@ export default class App extends Component {
     };
   }
 
-//only route needed is the question and question id 
-//commit things in sections to prevent from breaking code 
-//in route call the component which will then have the id of the question. 
-//need to  use findQuestions 
-componentDidMount() {
-  // fake date loading from API call
-  //const setAnswers = questions.map(info => this.setState(info.answers))
-  setTimeout(() => this.setState(BrowseData), 600)
-  setTimeout(() => this.setState(quizQuestions), 600)
+handleAddReview = review => {
+  const newReviewsArr = this.state.reviews.slice();
+  newReviewsArr.push(review);
+  this.setState({
+    reviews: newReviewsArr
+  });
 }
+
+handleAddPlant = plant => {
+  const newPlantArr = this.state.plants.slice();
+  newPlantArr.push(plant);
+  this.setState({
+    plants: newPlantArr
+  });
+}
+handleDeleteReview = reviewid => {
+console.log( this.state.reviews)
+this.setState({
+    reviews: this.state.reviews.filter(review => review.id !== reviewid)
+ });
+console.log( this.state.reviews)
+};
+
+renderNavRoutes() {
+  return (
+      <Error>
+          {['/', '/plants/:plantid'].map(path => (
+              <Route
+                  exact
+                  key={path}
+                  path={path}
+                  component={ReviewListNav}
+              />
+          ))}
+          <Route path="/reviews/:reviewid" component={ReviewPageNav} />
+      </Error>
+  );
+}
+
+renderMainRoutes() {
+  return (
+      <Error>
+          {['/', '/plants/:plantid'].map(path => (
+              <Route
+                  exact
+                  key={path}
+                  path={path}
+                  component={ReviewListMain}
+              />
+          ))}
+          <Route path="/reviews/:reviewid" component={ReviewPageMain} />
+          <Route path="/add-review" component={AddReview} />
+      </Error>
+  );
+}
+
+/* pre edits
 renderBrowsePageRoutes(){
   const { plants, notes} = this.state
     return(
@@ -104,25 +157,38 @@ renderBrowsePageRoutes(){
       </>
     )
 }
-
+*/
   render() {
+    const value = {
+      reviews: this.state.reviews,
+      plants: this.state.plants,
+      deleteReview: this.handleDeleteReview,
+      addReview: this.handleAddReview
+  };
     return (
-      <div className='App'>
-        <nav>
+      <ApiContext.Provider value={value}>
+      <div className="App">
+      <nav>
           <Nav className='App_nav'>
           </Nav>
         </nav>
-        <main>
-        <Route path='/quiz' component={QuizPage} />
-        <Route path='/browse' component={BrowsePage} />
-        <Route exact path='/' component={LandingPage} />
-        <Route path='/note/:noteId' component= {PlantPage}/>
-        <Route path='/plant/:plantId' component={PlantPage} />
+          <header className="App__header">
+              <h1>
+                Plant Pals                     
+              </h1>
+          </header>
+          <main className="App__main">
+            <h3>{this.renderNavRoutes()}</h3>
+            <h3>{this.renderMainRoutes()}</h3>
         </main>
-        <footer>
-          Footer
-        </footer>
+        <Route path='/quiz' component={QuizPage} />
+        <Route exact path='/' component={LandingPage} />
       </div>
+      <footer>
+  
+      </footer>
+  </ApiContext.Provider>
+  
     )
   }
 
