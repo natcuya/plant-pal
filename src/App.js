@@ -4,7 +4,7 @@ import Nav from './Nav'
 import config from './config'
 import AddReview from './AddReview'
 import ApiContext from './ApiContext'
-import { getReviewsForPlant, findReviews, findPlant} from './Quiz-helpers';
+import { getReviewsForPlant, findReview, findPlant} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
 //import BrowsePage from './BrowsePage'
 import QuizPage from './QuizPage'
@@ -116,48 +116,6 @@ renderMainRoutes() {
   );
 }
 
-/* pre edits
-renderBrowsePageRoutes(){
-  const { plants, notes} = this.state
-    return(
-      <>
-     {['/', '/plant/:plantId'].map(path =>
-          <Route
-            exact
-            key={path}
-            path={path}
-            render={routeProps => {
-              const { noteId } = routeProps.match.params
-              const { plantId } = routeProps.match.params
-              const notesForPlant = getNotesForPlant(notes, plantId)
-              return (
-                <PlantPage
-                  {...routeProps}
-                  notes={notesForPlant}
-                />
-              )
-            }}
-          /> 
-        )}
-        <Route
-          path='/note/:noteId'
-          render={routeProps => {
-            const { noteId } = routeProps.match.params
-            const note = findNotes(notes, noteId) || {}
-            const plant = findPlant(plants, note.plantId)
-            return (
-              <PlantPage
-                {...routeProps}
-                plant={plant}
-              />
-            )
-          }}
-        />
-
-      </>
-    )
-}
-*/
   render() {
     const value = {
       reviews: this.state.reviews,
@@ -178,15 +136,12 @@ renderBrowsePageRoutes(){
               </h1>
           </header>
           <main className="App__main">
+          <Route exact path='/' component={LandingPage} />
             <h3>{this.renderNavRoutes()}</h3>
             <h3>{this.renderMainRoutes()}</h3>
         </main>
         <Route path='/quiz' component={QuizPage} />
-        <Route exact path='/' component={LandingPage} />
       </div>
-      <footer>
-  
-      </footer>
   </ApiContext.Provider>
   
     )

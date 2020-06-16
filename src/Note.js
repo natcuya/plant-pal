@@ -37,24 +37,24 @@ class Note extends React.Component {
     const { content, id, rating } = this.props
     return (
       <div className='Note'>
-        <h2 className='Note__title'>
+        <h2 className='Review_content'>
           <Link to={`/reviews/${id}`}>
             {content}
           </Link>
         </h2>
         <button
-          className='Note__delete'
+          className='Review__delete'
           type='button'
           onClick={this.handleClickDelete}
         >
           {' '}
           remove
         </button>
-        <div className='Note__dates'>
-          <div className='Note__dates-modified'>
+        <div className='Review__ratings'>
+          <div className='Review__rating'>
             Rating
             {' '}
-            <span className='Date'>
+            <span className='rating'>
               {rating}
             </span>
           </div>

@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Note from '../Note'
+import {Rating} from '../Rating'
 import CircleButton from '../CircleButton'
 import ApiContext from '../ApiContext'
 //import './NoteListMain.css'
 import config from '../config';
-import { getReviewsForPlant, findReviews, findPlant} from '../Quiz-helpers';
+import { getReviewsForPlant, findReview, findPlant} from '../Quiz-helpers';
 
 
 export default class ReviewListMain extends React.Component {
@@ -57,10 +58,14 @@ componentDidMount() {
   }
 
   render() {
-    const { plantid } = this.props.match.params
+   const { plantid } = this.props.match.params
+    const { reviewid } = this.props.match.params
     const reviews = this.state.reviews
     const plants = this.state.plants
+    const review = findReview(reviews, reviewid) || {}
+    const plant = findPlant(plants, review.plantid)
     const reviewsForPlant = getReviewsForPlant(reviews, plantid)
+    
     return (
       <section className='NoteListMain'>
         <ul>
@@ -68,13 +73,14 @@ componentDidMount() {
             <li key={review.id}>
               <Note
                 id={review.id}
-               rating={review.rating}
                content={review.content}
                 onDeleteReview={this.handleDeleteReview}
               />
+               <Rating rating={review.rating}/>
             </li>
           )}
         </ul>
+        
         <div className='NoteListMain__button-container'>
           <CircleButton
             tag={Link}

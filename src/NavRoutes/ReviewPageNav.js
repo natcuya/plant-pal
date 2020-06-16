@@ -1,7 +1,7 @@
 import React from 'react'
 import CircleButton from '../CircleButton'
 import ApiContext from '../ApiContext'
-import { getReviewsForPlant, findReviews, findPlant} from '../Quiz-helpers';
+import { getReviewsForPlant, findReview, findPlant} from '../Quiz-helpers';
 //import './NotePageNav.css'
 
 export default class ReviewPageNav extends React.Component {
@@ -16,23 +16,33 @@ export default class ReviewPageNav extends React.Component {
   static contextType = ApiContext;
 
   render() {
-    const { reviews, plants, } = this.context
+    const { reviews, plants } = this.context
     const { reviewid } = this.props.match.params
-    const review = findReviews(reviews, reviewid) || {}
-    const plant = findPlant(plants, review.plant)
+    //const { plantid } = this.props.match.params
+    const review = findReview(reviews, reviewid) || {};
+    const plant = findPlant(plants, review.plantid);
+    const plantName = () => 
+    (plant !== undefined)
+    ? <span>{plant.name}</span>
+    : <span>Loading...</span>;
+
     return (
-      <div className='NotePageNav'>
+      <div className='ReviewPageNav'>
         <CircleButton
           tag='button'
           role='link'
           onClick={() => this.props.history.goBack()}
-          className='NotePageNav__back-button'
+          className='ReviewPageNav__back-button'
         >
           <br />
           Back
         </CircleButton>
-        {plant && (
-          <h3 className='NotePageNav__folder-name'>
+        <h3 className='ReviewNav-plantName'>
+            {plantName(plant)}
+          </h3>
+         hellp
+         {plant && (
+          <h3 className='ReviewPageNav__plant-name'>
             {plant.content}
           </h3>
         )}

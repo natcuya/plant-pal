@@ -48,9 +48,6 @@ export default class ReviewPageMain extends React.Component {
         />
         <div className='NotePageMain__content'>
           <p>{review.content}</p>
-          {/* {note.content.split(/\n \r|\n/).map((para, i) =>
-            <p key={i}>{para}</p>
-          )} */}
         </div>
       </section>
     )
