@@ -68,6 +68,17 @@ componentDidMount() {
     
     return (
       <section className='NoteListMain'>
+    <div className='NoteListMain__button-container'>
+          <CircleButton
+            tag={Link}
+            to='/add-review'
+            type='button'
+            className='NoteListMain__add-note-button'
+          >
+            <br />
+           Add review
+          </CircleButton>
+        </div>
         <ul>
           {reviewsForPlant.map(review =>
             <li key={review.id}>
@@ -79,20 +90,7 @@ componentDidMount() {
                <Rating rating={review.rating}/>
             </li>
           )}
-        </ul>
-        
-        <div className='NoteListMain__button-container'>
-          <CircleButton
-            tag={Link}
-            to='/add-review'
-            type='button'
-            className='NoteListMain__add-note-button'
-          >
-            <br />
-           Add review
-          </CircleButton>
-        </div>
-        
+        </ul>     
       </section>
     )
   }

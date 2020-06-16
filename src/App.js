@@ -111,10 +111,10 @@ renderMainRoutes() {
               />
           ))}
           <Route path="/reviews/:reviewid" component={ReviewPageMain} />
-          <Route path="/add-review" component={AddReview} />
       </Error>
   );
 }
+
 
   render() {
     const value = {
@@ -132,7 +132,9 @@ renderMainRoutes() {
         </nav>
           <header className="App__header">
               <h1>
-                Plant Pals                     
+                Plant Pals 
+                <Route path="/add-review" component={AddReview} />
+                    
               </h1>
           </header>
           <main className="App__main">

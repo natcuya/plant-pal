@@ -37,11 +37,11 @@ class Note extends React.Component {
     const { content, id, rating } = this.props
     return (
       <div className='Note'>
-        <h2 className='Review_content'>
+        <p className='Review_content'>
           <Link to={`/reviews/${id}`}>
             {content}
           </Link>
-        </h2>
+        </p>
         <button
           className='Review__delete'
           type='button'
