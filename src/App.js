@@ -126,23 +126,25 @@ renderMainRoutes() {
     return (
       <ApiContext.Provider value={value}>
       <div className="App">
-      <nav>
-          <Nav className='App_nav'>
-          </Nav>
-        </nav>
+      <section id= "page">
           <header className="App__header">
               <h1>
                 Plant Pals 
-                <Route path="/add-review" component={AddReview} />
-                    
+                <Route path="/add-review" component={AddReview} /> 
+                <Nav className='App_nav'>
+                </Nav>
               </h1>
           </header>
+          <nav>
+          {this.renderNavRoutes()}
+          </nav>
           <main className="App__main">
           <Route exact path='/' component={LandingPage} />
-            <h3>{this.renderNavRoutes()}</h3>
-            <h3>{this.renderMainRoutes()}</h3>
+      {this.renderMainRoutes()}
         </main>
         <Route path='/quiz' component={QuizPage} />
+        <footer>Footer</footer>
+        </section>
       </div>
   </ApiContext.Provider>
   

@@ -19,7 +19,7 @@ class AddReview extends React.Component {
               value: '',
               touched: false
             },
-            plant: {
+            plantid: {
                 value: '',
                 touched: false
             }
@@ -42,10 +42,10 @@ class AddReview extends React.Component {
           }
         })
       }
-      updateReviewPlant(id) {
+      updateReviewPlant(plantid) {
         this.setState({
-            plant: {
-                value: id, 
+            plantid: {
+                value: plantid, 
                 touched: true}
             })
       } 
@@ -67,11 +67,11 @@ handleSubmit(event) {
    // const { rating, content, name } = e.target;
     //const {plants=[]} = this.context;
     //const plant = findPlantByName(plants, name.value);
-    const { rating, content, plant } = this.state
+    const { rating, content, plantid } = this.state
    const reviewToAdd = {
        rating: Number(rating.value),
        content: content.value, 
-       plant:  Number(plant.value),
+       plantid:  Number(plantid.value),
     }
    //const rating = event.target.rating.value
    // const plantid = this.context.plants.find(plant => plant.name === event.target.name.value).id
@@ -82,7 +82,7 @@ handleSubmit(event) {
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({reviewToAdd})
+      body: JSON.stringify(reviewToAdd)
     })
     // this.props.history.push(`/plants/${review.plantid}`)
     .then(res => {
@@ -102,8 +102,8 @@ handleSubmit(event) {
     }
 
     validatePlantName() {
-        const plant = this.state.plant.value.trim();
-        if(plant.length === 0) {
+        const plantid = this.state.plantid.value.trim();
+        if(plantid.length === 0) {
           return 'Plant name is required'
         }
       }
@@ -151,7 +151,7 @@ handleSubmit(event) {
                 return ( 
                 <option key={plant.id} value={plant.id}>{plant.name}</option>)})}
             </select>
-            {this.state.plant.touched && <ValidationError message={plantError} />}
+            {this.state.plantid.touched && <ValidationError message={plantError} />}
           </div>
 
           <div className="form-group">
