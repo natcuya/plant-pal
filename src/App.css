@@ -1,4 +1,4 @@
-/*
+
 * {
     box-sizing: border-box;
   }
@@ -10,7 +10,7 @@
     color: white;
     text-align: center;
     line-height: 1.5;
-    background-image: url(https://image.freepik.com/free-photo/tropical-green-leaves-background_53876-88891.jpg);
+    background-image: url(https://wallpaperaccess.com/full/245018.jpg);
   }
   
   nav,
@@ -33,12 +33,19 @@
     padding: 25px 15px;
     color:green;
     background-color: honeydew;
+    background-size: cover;
+    background-repeat:no-repeat;
+    border:white;
+    background-image: url('https://wallpaperaccess.com/full/245018.jpg');
   }
   
   p{
       text-align: left;
-      font-size: 15px;
+      font-size: 40px;
       margin: 10px;
+      color: white;
+      text-shadow: 2px 2px black;
+
   }
 
   h2{
@@ -51,39 +58,78 @@
     text-align: left;
     
   }
-*/
 
   img{
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin: 20px;
-  padding: 10px;
-  width: 150px;
+  border-radius: 5px;
+  width: 345px;
+  height: 300px;
   }
-
+/*
   #page {
     display: grid;
-    width: 100%;
-    height: 250px;
+    width: 150%;
+    height: 150px;
     grid-template-areas: "head head"
                          "nav  main"
                          "nav  foot";
-    grid-template-rows: 50px 1fr 30px;
-    grid-template-columns: 150px 1fr;
+    grid-template-rows: 200px 1fr 50px;
+    grid-template-columns: 400px 1fr;
   }
   
   #page > header {
     grid-area: head;
+    color: green
   }
   
   #page > nav {
     grid-area: nav;
+    background-color: lightgrey;
   }
   
   #page > main {
     grid-area: main;
+    background: lightblue;
   }
   #page > footer {
     grid-area: foot;
     background-color: #8cffa0;
+  }
+  */
+
+  a:visited {
+    color: darkgreen;
+  }
+
+
+  @media only screen and (min-width: 300px) {
+    /* For mobile phones: */
+   
+body{
+    font-size: 10px;
+}
+
+p{
+  font-size: 15px;
+}
+img{
+
+  width: 200px;
+  height:200px;
+}
+  }
+
+  @media only screen and (min-width: 769px) {
+    
+    img{
+      margin-left: 20%;
+      width: 500px;
+      height:300px;
+    }
+    body{
+      font-size: 30px;
+  }
+  
+  p{
+    font-size: 35px;
+  }
   }

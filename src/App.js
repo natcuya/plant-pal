@@ -6,15 +6,16 @@ import AddReview from './AddReview'
 import ApiContext from './ApiContext'
 import { getReviewsForPlant, findReview, findPlant} from './Quiz-helpers';
 import LandingPage from './LandingPage/LandingPage'
-//import BrowsePage from './BrowsePage'
+import BrowsePage from './BrowsePage'
 import QuizPage from './QuizPage'
-//import PlantPage from './PlantPage'
+import PlantPage from './PlantPage'
 import ReviewListMain from './MainRoutes/ReviewListMain'
 import ReviewPageMain from './MainRoutes/ReviewPageMain'
 import ReviewListNav from './NavRoutes/ReviewListNav'
 import ReviewPageNav from './NavRoutes/ReviewPageNav'
 import Error from './Error'
 import './App.css'
+import './plant1.png'
 import quizQuestions from './dummy-store/quizQuestions'
 
 export default class App extends Component {
@@ -83,38 +84,6 @@ this.setState({
 console.log( this.state.reviews)
 };
 
-renderNavRoutes() {
-  return (
-      <Error>
-          {['/', '/plants/:plantid'].map(path => (
-              <Route
-                  exact
-                  key={path}
-                  path={path}
-                  component={ReviewListNav}
-              />
-          ))}
-          <Route path="/reviews/:reviewid" component={ReviewPageNav} />
-      </Error>
-  );
-}
-
-renderMainRoutes() {
-  return (
-      <Error>
-          {['/', '/plants/:plantid'].map(path => (
-              <Route
-                  exact
-                  key={path}
-                  path={path}
-                  component={ReviewListMain}
-              />
-          ))}
-          <Route path="/reviews/:reviewid" component={ReviewPageMain} />
-      </Error>
-  );
-}
-
 
   render() {
     const value = {
@@ -135,19 +104,16 @@ renderMainRoutes() {
                 </Nav>
               </h1>
           </header>
-          <nav>
-          {this.renderNavRoutes()}
-          </nav>
           <main className="App__main">
           <Route exact path='/' component={LandingPage} />
-      {this.renderMainRoutes()}
         </main>
+        <Route path='/browse' component={BrowsePage} />
+        <Route path= '/plants/:plantid' component= {ReviewListMain} />
+        <Route path='/reviews/:reviewid' component={ReviewPageMain} />
         <Route path='/quiz' component={QuizPage} />
-        <footer>Footer</footer>
         </section>
       </div>
   </ApiContext.Provider>
-  
     )
   }
 

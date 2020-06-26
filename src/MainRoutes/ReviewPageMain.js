@@ -2,6 +2,7 @@ import React from 'react'
 import Note from '../Note'
 import ApiContext from '../ApiContext'
 //import './NotePageMain.css'
+import CircleButton from '../CircleButton'
 import config from '../config';
 
 export default class ReviewPageMain extends React.Component {
@@ -11,6 +12,9 @@ export default class ReviewPageMain extends React.Component {
   static defaultProps = {
     match: {
       params: {}
+    },
+    history: {
+      goBack: () => { }
     }
   }
   static contextType = ApiContext
@@ -39,6 +43,7 @@ export default class ReviewPageMain extends React.Component {
 
   render() {
     let review = this.state.review;
+    let plant = this.state.plant;
     return (
       <section className='NotePageMain'>
         <Note
@@ -49,7 +54,19 @@ export default class ReviewPageMain extends React.Component {
         <div className='NotePageMain__content'>
           <p>{review.content}</p>
         </div>
+        <div className='ReviewPageNav'>
+        <CircleButton
+          tag='button'
+          role='link'
+          onClick={() => this.props.history.goBack()}
+          className='ReviewPageNav__back-button'
+        >
+          <br />
+          Back
+        </CircleButton> 
+      </div>
       </section>
     )
   }
 }
+

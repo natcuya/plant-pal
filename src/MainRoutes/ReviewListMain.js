@@ -6,7 +6,7 @@ import CircleButton from '../CircleButton'
 import ApiContext from '../ApiContext'
 //import './NoteListMain.css'
 import config from '../config';
-import { getReviewsForPlant, findReview, findPlant} from '../Quiz-helpers';
+import { getReviewsForPlant, findReview, findPlant, findPlantByName, countReviewsForPlant} from '../Quiz-helpers';
 
 
 export default class ReviewListMain extends React.Component {
@@ -65,20 +65,22 @@ componentDidMount() {
     const review = findReview(reviews, reviewid) || {}
     const plant = findPlant(plants, review.plantid)
     const reviewsForPlant = getReviewsForPlant(reviews, plantid)
+    //const plant = findPlantByName(plants, plant.name.value);
     
     return (
-      <section className='NoteListMain'>
-    <div className='NoteListMain__button-container'>
+      <section className='ReviewListMain'>
+    <div className='ReviewListMain__button-container'>
           <CircleButton
             tag={Link}
             to='/add-review'
             type='button'
-            className='NoteListMain__add-note-button'
+            className='ReviewListMain__add-note-button'
           >
             <br />
            Add review
           </CircleButton>
         </div>
+       
         <ul>
           {reviewsForPlant.map(review =>
             <li key={review.id}>
@@ -90,8 +92,9 @@ componentDidMount() {
                <Rating rating={review.rating}/>
             </li>
           )}
-        </ul>     
+        </ul>    
       </section>
     )
   }
 }
+

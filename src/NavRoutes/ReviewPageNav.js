@@ -21,10 +21,6 @@ export default class ReviewPageNav extends React.Component {
     //const { plantid } = this.props.match.params
     const review = findReview(reviews, reviewid) || {};
     const plant = findPlant(plants, review.plantid);
-    const plantName = () => 
-    (plant !== undefined)
-    ? <span>{plant.name}</span>
-    : <span>Loading...</span>;
 
     return (
       <div className='ReviewPageNav'>
@@ -36,16 +32,7 @@ export default class ReviewPageNav extends React.Component {
         >
           <br />
           Back
-        </CircleButton>
-        <h3 className='ReviewNav-plantName'>
-            {plantName(plant)}
-          </h3>
-         hellp
-         {plant && (
-          <h3 className='ReviewPageNav__plant-name'>
-            {plant.content}
-          </h3>
-        )}
+        </CircleButton> 
       </div>
     )
   }

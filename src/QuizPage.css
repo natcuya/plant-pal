@@ -1,8 +1,19 @@
 .QuizPage{
     list-style-type: none;
+    color:white;
 }
 .answerOptions {
     margin: 0;
     padding: 0;
     list-style: none;
   }
+.QuestionList{
+    text-shadow: 2px 2px black;
+    color: white;
+    font-size: 50px;
+}
+li{
+text-shadow: 2px 2px black;
+font-size: 50px;
+background-color: rgba(0, 100, 0, 0.699);
+}

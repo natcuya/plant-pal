@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ApiContext from './ApiContext'
 import config from './config'
+import './Note.css'
 
 
 class Note extends React.Component {
@@ -13,6 +14,7 @@ class Note extends React.Component {
   handleClickDelete = e => {
     e.preventDefault()
     const reviewid = this.props.id
+    const plantid = this.props.plantid
     fetch(`${config.API_ENDPOINT}/reviews/${reviewid}`, {
       method: 'DELETE',
       headers: {
@@ -34,7 +36,7 @@ class Note extends React.Component {
   }
 
   render() {
-    const { content, id, rating } = this.props
+    const { content, id, rating, } = this.props
     return (
       <div className='Note'>
         <p className='Review_content'>
