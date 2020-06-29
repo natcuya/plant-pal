@@ -4,7 +4,7 @@ import './LandingPage.css'
 export default class LandingPage extends Component {
   render() {
     return (
-      <Content className='LandingPage'>
+      <div className='land'>
         <h2>Welcome to Plant Pals</h2>
         <h3>Grow With Us and Cultivate your Green Thumb!</h3>
         <p>Plant Pal is curated to find the perfect plant that fits your lifestyle</p>
@@ -15,7 +15,7 @@ export default class LandingPage extends Component {
         <p>
         Browse through our catalog! Rate and Review your favorite plant!     
         </p>
-      </Content>
+      </div>
     )
   }
 }

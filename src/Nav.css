@@ -11,7 +11,11 @@ nav {
     font-size: 1.2pc;
   }
 
+
   a {
-    PADDING: 10PX;
+    PADDING: 25px;
+    font-size: 35px;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.767);
   }
   

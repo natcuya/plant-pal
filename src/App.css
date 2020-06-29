@@ -30,9 +30,11 @@
   }
   
   header {
+    font-size: 50px;
+    text-shadow: 2px 2px white;
     padding: 25px 15px;
-    color:green;
-    background-color: honeydew;
+    color:rgb(81, 158, 81);
+    background-color: green;
     background-size: cover;
     background-repeat:no-repeat;
     border:white;
@@ -45,18 +47,26 @@
       margin: 10px;
       color: white;
       text-shadow: 2px 2px black;
+  }
 
+  .land{
+    color: green;
+    background-color: rgba(255, 255, 255, 0.658);
+  }
+  .land p{
+    font-size: 50px;
+    color:black;
   }
 
   h2{
       margin: 10px;
-      font-size: 30px;
+      font-size: 50px;
   }
   h3,h4{
-    font-size: 25px;
+    font-size: 50px;
     margin: 15px; 
     text-align: left;
-    
+    text-shadow: 2px 2px black;
   }
 
   img{
