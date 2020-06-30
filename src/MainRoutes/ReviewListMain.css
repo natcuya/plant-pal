@@ -1,0 +1,12 @@
+.ReviewListMain__button-container{
+    font-size: 40px;
+   margin: -5px;
+}
+
+.NavCircleButton.ReviewListMain__add-note-button{
+    color:green;
+    padding: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px white;
+}
+

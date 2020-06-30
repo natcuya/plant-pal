@@ -55,9 +55,9 @@ export default class QuizPage extends React.Component {
         this.setUserAnswer(event.currentTarget.value);
       
         if (this.state.questionId < quizQuestions.length) {
-          setTimeout(() => this.setNextQuestion(), 300);
+          setTimeout(() => this.setNextQuestion(), 500);
         } else {
-          setTimeout(() => this.setResults(this.getResults()), 300);
+          setTimeout(() => this.setResults(this.getResults()), 500);
         }
       }
       
@@ -123,12 +123,12 @@ export default class QuizPage extends React.Component {
             <section className= 'QuestionList'>
             <Content>
                 <div className='field'>
-                    <h2>Plant Pal Questionnaire</h2>
-                    <div>
-                    To ensure we find your perfect match, take our quiz. The quiz will match a plant suited to your environmental constraints. 
+                  <h2>Plant Pal Questionnaire</h2>
+                   <p> To ensure we find your perfect match, our quiz will account for your environmental constraints.</p> 
+                   </div>
+                   <div>
                       {this.state.result ? this.renderResult() : this.renderQuiz()}
                       </div>
-                    </div>
             </Content>
              </section>
         )

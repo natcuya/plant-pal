@@ -4,7 +4,7 @@ import Note from '../Note'
 import {Rating} from '../Rating'
 import CircleButton from '../CircleButton'
 import ApiContext from '../ApiContext'
-//import './NoteListMain.css'
+import './ReviewListMain.css'
 import config from '../config';
 import { getReviewsForPlant, findReview, findPlant, findPlantByName, countReviewsForPlant} from '../Quiz-helpers';
 

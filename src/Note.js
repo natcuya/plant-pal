@@ -39,29 +39,12 @@ class Note extends React.Component {
     const { content, id, rating, } = this.props
     return (
       <div className='Note'>
-        <p className='Review_content'>
-          <Link to={`/reviews/${id}`}>
-            {content}
-          </Link>
-        </p>
-        <button
-          className='Review__delete'
-          type='button'
-          onClick={this.handleClickDelete}
-        >
-          {' '}
-          remove
-        </button>
-        <div className='Review__ratings'>
-          <div className='Review__rating'>
-            Rating
-            {' '}
-            <span className='rating'>
-              {rating}
-            </span>
-          </div>
-        </div>
+        <h3 className='Review_content'>Review: </h3>
+        {content}
+        <h4 className='Review__ratings'>Rating: </h4> 
+        {rating}
       </div>
+
     )
   }
 }

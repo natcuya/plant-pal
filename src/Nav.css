@@ -12,7 +12,7 @@ nav {
   }
 
 
-  a {
+ .Nav a {
     PADDING: 25px;
     font-size: 35px;
     text-transform: uppercase;

@@ -14,6 +14,8 @@ import ReviewPageMain from './MainRoutes/ReviewPageMain'
 import ReviewListNav from './NavRoutes/ReviewListNav'
 import ReviewPageNav from './NavRoutes/ReviewPageNav'
 import Error from './Error'
+import FontAwesome from 'react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './App.css'
 import './plant1.png'
 import quizQuestions from './dummy-store/quizQuestions'
@@ -98,8 +100,7 @@ console.log( this.state.reviews)
       <section id= "page">
           <header className="App__header">
               <h1>
-                Plant Pals 
-                <Route path="/add-review" component={AddReview} /> 
+              <i className="fas fa-seedling"></i>Plant Pals<i className="fas fa-seedling"></i>
                 <Nav className='App_nav'>
                 </Nav>
               </h1>
@@ -107,6 +108,7 @@ console.log( this.state.reviews)
           <main className="App__main">
           <Route exact path='/' component={LandingPage} />
         </main>
+        <Route path="/add-review" component={AddReview} /> 
         <Route path='/browse' component={BrowsePage} />
         <Route path= '/plants/:plantid' component= {ReviewListMain} />
         <Route path='/reviews/:reviewid' component={ReviewPageMain} />

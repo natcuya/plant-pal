@@ -1,0 +1,22 @@
+div{
+    text-transform: uppercase;
+
+}
+
+.result-link{
+   padding: 8px;
+}
+h3{
+   padding-left: 30%;
+    color:green;
+}
+strong{
+    color:green;
+}
+i{
+    color:green;
+}
+.result-link{
+    font-weight: bold;
+    color:white;
+}

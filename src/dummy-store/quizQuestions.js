@@ -83,7 +83,27 @@ const quizQuestion = [
             {
                 type: "Jade Plant",
                 content: "Doesn't Matter"
-            }
+            },
+            
+        ]
+    },
+    {
+        id:5,
+        question: "What is the temperature in your home like?",
+        answers: [
+            {
+                type: "Jasmine",
+                content: "Warm"
+            },
+            {
+                type: "Spider Plant",
+                content: "Cold"
+            },
+            {
+                type: "Jade Plant",
+                content: "Cool"
+            },
+            
         ]
     }
   ]

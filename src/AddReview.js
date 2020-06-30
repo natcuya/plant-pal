@@ -3,7 +3,7 @@ import ValidationError from './ValidationError';
 import ApiContext from './ApiContext';
 import config from './config';
 //import { getReviewsForPlant, findReview, findPlant, findPlantByName} from '../Quiz-helpers';
-//import './AddReview.css';
+import './AddReview.css';
 
 class AddReview extends React.Component {
     static contextType = ApiContext
@@ -130,21 +130,21 @@ handleSubmit(event) {
     const contentError = this.validateReviewContent();
 
    return (
-      <section>
+      <section className="AddReview">
         <form className="add-review" onSubmit={ e=> this.handleSubmit(e)}>
           <h2>Create Review</h2>
-
           <div className="form-group">
             <label htmlFor="review-content">
-            content
+            Write your review:
             </label>
+            <br/>
             <input type="text" className="review-input" name="review-content" id="review-content" onChange={e => this.updateReviewContent(e.target.value)}>
             </input>
             {this.state.content.touched && <ValidationError message={contentError} />}
           </div>
-
           <div className="form-group">
             <label htmlFor="plant-select">Choose a plant:</label>
+            <br/>
             <select name="plant-select" id="plant-select" onChange={e=>this.updateReviewPlant(e.target.value)}>
                 <option value="">Please select a plant</option>
               {this.context.plants.map(plant => {
@@ -155,8 +155,8 @@ handleSubmit(event) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="rating">Rate this plant:</label>
-            <input type="number" className="rating" name="rating" id="rating" onChange={e => this.updateReviewRating(e.target.value)}>
+            <label htmlFor="rating">Rate this plant (1-5): </label>
+            <input type="number" className="rating" name="rating" id="rating" min="1" max="5"onChange={e => this.updateReviewRating(e.target.value)}>
             </input>
           {this.state.rating.touched && <ValidationError message={ratingError} />}
         </div>
