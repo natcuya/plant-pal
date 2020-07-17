@@ -2,6 +2,7 @@
 Welcome To Plant Pals!
 
 Live Link: https://plant-pal.now.sh/
+Link to API: https://github.com/natcuya/plant-api
 
 Summary: 
 
