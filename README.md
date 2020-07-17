@@ -10,4 +10,4 @@ The user is able to browse through a directory of indoor plants where basic a su
 A short quiz is also implemented as a tool for users to find a quick plant match. 
 
 ![Alt text](plant.png)
-Screen Shot 2020-07-16 at 8.44.56 PM
+
