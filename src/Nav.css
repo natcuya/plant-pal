@@ -13,9 +13,8 @@ nav {
 
 
  .Nav a {
-    PADDING: 25px;
-    font-size: 35px;
+    PADDING: 10px;
+    font-size: 15px;
     text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0.767);
   }
   

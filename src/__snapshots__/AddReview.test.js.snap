@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<section
+  className="AddReview"
+>
+  <form
+    className="add-review"
+    onSubmit={[Function]}
+  >
+    <h2>
+      Create Review
+    </h2>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="review-content"
+      >
+        Write your review:
+      </label>
+      <br />
+      <input
+        className="review-input"
+        id="review-content"
+        name="review-content"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="plant-select"
+      >
+        Choose a plant:
+      </label>
+      <br />
+      <select
+        id="plant-select"
+        name="plant-select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Please select a plant
+        </option>
+      </select>
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="rating"
+      >
+        Rate this plant (1-5): 
+      </label>
+      <input
+        className="rating"
+        id="rating"
+        max="5"
+        min="1"
+        name="rating"
+        onChange={[Function]}
+        type="number"
+      />
+    </div>
+    <button
+      className="add-review-button"
+      disabled="Content is required"
+    >
+      Add Review
+    </button>
+  </form>
+</section>
+`;

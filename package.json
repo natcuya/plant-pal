@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "react-test-renderer": "^16.13.1",
     "serve": "^11.3.2"
   }
 }

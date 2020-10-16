@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import BrowsePage from './BrowsePage';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ it('renders without crashing', () => {
 
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <BrowsePage/>
     </BrowserRouter>, div);
 
   ReactDOM.unmountComponentAtNode(div);

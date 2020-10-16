@@ -4,20 +4,21 @@
   }
   
   body {
-    font-family: "Open Sans",
-    sans-serif;
+    font-family: 'Piazzolla', serif;
     font-size: 20px;
     color: white;
     text-align: center;
+    display: center;
     line-height: 1.5;
-    background-image: url(https://wallpaperaccess.com/full/245018.jpg);
-    background-position: bottom;
+    background-position: center;
+    background-image: url('images/plant3.jpg');
+    background-size: cover; 
+  background-color: #E8C892;
+   
   }
   
-  nav,
-  footer {
+  nav {
     padding: 0.5% 0;
-    background-color: #aaa;
   }
   
   nav {
@@ -29,58 +30,76 @@
     z-index: 10;
     font-size: 1.2pc;
   }
-  
+  .App__header h1 {
+    color: white;
+    text-shadow: 1px 1px black;
+  }
   header {
-    font-size: 50px;
+    font-size: 20px;
     padding: 25px 15px;
     color: darkgreen;
-    text-shadow: 2px 2px white;
     background-size: cover;
     background-repeat:no-repeat;
     border:white;
-    background-image: url('https://wallpaperaccess.com/full/245018.jpg');
+   
   }
   
   p{
       text-align: left;
       font-size: 40px;
       margin: 10px;
-      color: white;
-    text-shadow: 2px 2px black;
+      color: rgb(53, 66, 53);
+      font-family: 'Piazzolla', serif;
   }
 
   .land{
     color: rgb(96, 167, 68);
-    background-color: rgba(0, 128, 0, 0.274);
+    min-height: 730px;
+    background-size: 50%;
+    background-repeat:no-repeat;
+    margin:10px;
+    display: flex;
+    padding: 20px;
+    
   }
   .land p{
-    font-size: 40px;
+    font-size: 20px;
     text-transform: none;
-    color: white;
+    color: rgb(53, 66, 53);
+    line-height: 30px;
+    letter-spacing: 0.43px;
   }
   .land h3{
+    font-family: 'Piazzolla', serif;
+    font-size: 15px;
     margin: 5px;
-    padding: 5px;
-  }
+    padding: 5px;  }
 
 
 .land a{
- font-size: 50px;
-  margin: 30px;
+ font-size: 20px;
+  margin: 20px;
   color: white;
+  padding: 10px;
+  background-color: rgb(141, 184, 141);
 }
   h2{
       margin: 10px;
-      font-size: 50px;
+      font-size: 20px;
   }
   h3,h4{
-    font-size: 40px;
+    font-size: 20px;
     margin: 15px; 
     text-align: left;
-    color: white;
-    text-shadow: 2px 2px black;
+    color: rgb(53, 66, 53);
   }
-
+.sec1, .sec2{
+  width: 50%;
+  padding: 10px;
+  margin:10px;
+  background-color: rgba(240, 255, 240, 0.596);
+  margin-bottom: 300px;
+}
   img{
   border-radius: 5px;
   width: 345px;
@@ -93,19 +112,18 @@
   .BrowseListNav p{
     text-transform: none;
   }
-  .land h3 {
-    color: green;
-    text-shadow: none;
-    margin: 0px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.952);
-  }
-
   @media only screen and (min-width: 300px) {
     /* For mobile phones: */
    
 body{
     font-size: 10px;
+    background-position: top;
+}
+.sec1, .sec2{
+  width: 50%;
+  padding: 10px;
+  margin:10px;  
+  margin-bottom: 300px;
 }
 
 p{
@@ -126,10 +144,14 @@ img{
       height:300px;
     }
     body{
-      font-size: 30px;
+      font-size: 10px;
+      background-position: center;
+      background-repeat: repeat;
+      background-size: stretch;
+      position: relative;
   }
   
   p{
-    font-size: 35px;
+    font-size: 15px;
   }
   }

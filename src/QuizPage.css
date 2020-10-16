@@ -3,22 +3,21 @@
     color:white;
 }
 .answerOptions {
-    padding: 0px;
+    padding: 15px;
     list-style: none;
   }
 .QuestionList{
     text-shadow: 2px 2px black;
     color: white;
-    font-size: 35px;
+    font-size: 30px;
 }
 li{
-text-shadow: 2px 2px black;
-font-size: 50px;
-padding:50px;
+font-size: 15px;
+padding:30px;
 background-color: rgba(0, 100, 0, 0.699);
 }
 .radioCustomLabel{
-   font-size: 40px;
+   font-size: 20px;
 }
 input[type=radio] {
     display: block;

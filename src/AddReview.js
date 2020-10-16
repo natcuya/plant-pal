@@ -99,21 +99,21 @@ handleSubmit(event) {
       .catch(error => {
         console.error(error)
       })
-    }
+    };
 
     validatePlantName() {
         const plantid = this.state.plantid.value.trim();
         if(plantid.length === 0) {
           return 'Plant name is required'
         }
-      }
+      };
     
   validateReviewRating() {
     const rating = this.state.rating.value.trim();
     if(rating.length === 0) {
       return 'Rating is required'
     }
-  }
+  };
 
   validateReviewContent() {
     const content = this.state.content.value.trim();
@@ -122,7 +122,7 @@ handleSubmit(event) {
     } else if (content.length > 500) {
       return 'Content must be less than 500 characters.'
     }
-  }
+  };
 
   render() {
     const plantError = this.validatePlantName();
@@ -167,6 +167,6 @@ handleSubmit(event) {
       </section>
     )
   }
-}
+};
 
-export default AddReview
+export default AddReview;

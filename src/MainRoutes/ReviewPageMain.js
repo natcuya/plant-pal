@@ -8,7 +8,7 @@ import config from '../config';
 export default class ReviewPageMain extends React.Component {
   state = {
     review: ''
-  }
+  };
   static defaultProps = {
     match: {
       params: {}
@@ -16,8 +16,8 @@ export default class ReviewPageMain extends React.Component {
     history: {
       goBack: () => { }
     }
-  }
-  static contextType = ApiContext
+  };
+  static contextType = ApiContext;
 
   componentDidMount() {
     const { reviewid } = this.props.match.params
@@ -34,12 +34,12 @@ export default class ReviewPageMain extends React.Component {
       .catch(error => {
         console.error({error})
       })
-  }
+  };
 
   handleDeleteReview = reviewid => {
     console.log('handledeletereview function')
     this.props.history.push(`/`)
-  }
+  };
 
   render() {
     let review = this.state.review;
@@ -67,6 +67,6 @@ export default class ReviewPageMain extends React.Component {
       </div>
       </section>
     )
-  }
-}
+  };
+};
 

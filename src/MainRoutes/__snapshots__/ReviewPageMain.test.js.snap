@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the UI as expected 1`] = `
+<section
+  className="NotePageMain"
+>
+  <div
+    className="Note"
+  >
+    <h3
+      className="Review_content"
+    >
+      Review: 
+    </h3>
+    <h4
+      className="Review__ratings"
+    >
+      Rating: 
+    </h4>
+  </div>
+  <div
+    className="NotePageMain__content"
+  >
+    <p />
+  </div>
+  <div
+    className="ReviewPageNav"
+  >
+    <button
+      className="NavCircleButton ReviewPageNav__back-button"
+      onClick={[Function]}
+      role="link"
+    >
+      <br />
+      Back
+    </button>
+  </div>
+</section>
+`;

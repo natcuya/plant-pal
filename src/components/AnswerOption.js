@@ -19,7 +19,7 @@ function AnswerOption(props) {
       </label>
     </li>
   );
-}
+};
 
 AnswerOption.propTypes = {
   answerType: PropTypes.string.isRequired,

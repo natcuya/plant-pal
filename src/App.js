@@ -17,7 +17,9 @@ import Error from './Error'
 import FontAwesome from 'react-fontawesome'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './App.css'
-import './plant1.png'
+import './images/plant2.jpg'
+import './images/plant3.jpg'
+import './images/plant4.jpg'
 import quizQuestions from './dummy-store/quizQuestions'
 
 export default class App extends Component {
@@ -25,11 +27,12 @@ export default class App extends Component {
     reviews: [],
     plants: [],
   };
+
   componentDidMount() {
     Promise.all([
       fetch(`${config.API_ENDPOINT}/reviews`),
       fetch(`${config.API_ENDPOINT}/plants`)
-    ])
+      ])
       .then(([reviewsRes, plantsRes]) => {
         if (!reviewsRes.ok)
           return reviewsRes.json().then(e => Promise.reject(e))
@@ -47,7 +50,7 @@ export default class App extends Component {
       .catch(error => {
         console.error({ error })
       })
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -61,7 +64,7 @@ export default class App extends Component {
       answersCount: {},
       result: ''
     };
-  }
+  };
 
 handleAddReview = review => {
   const newReviewsArr = this.state.reviews.slice();
@@ -69,7 +72,7 @@ handleAddReview = review => {
   this.setState({
     reviews: newReviewsArr
   });
-}
+};
 
 handleAddPlant = plant => {
   const newPlantArr = this.state.plants.slice();
@@ -77,7 +80,7 @@ handleAddPlant = plant => {
   this.setState({
     plants: newPlantArr
   });
-}
+};
 handleDeleteReview = reviewid => {
 console.log( this.state.reviews)
 this.setState({
@@ -85,7 +88,6 @@ this.setState({
  });
 console.log( this.state.reviews)
 };
-
 
   render() {
     const value = {
@@ -96,14 +98,14 @@ console.log( this.state.reviews)
   };
     return (
       <ApiContext.Provider value={value}>
-      <div className="App">
+      <div className="app">
       <section id= "page">
           <header className="App__header">
               <h1>
-              <i className="fas fa-seedling"></i>Plant Pals<i className="fas fa-seedling"></i>
+            Plant Pals
+              </h1>
                 <Nav className='App_nav'>
                 </Nav>
-              </h1>
           </header>
           <main className="App__main">
           <Route exact path='/' component={LandingPage} />
@@ -117,8 +119,7 @@ console.log( this.state.reviews)
       </div>
   </ApiContext.Provider>
     )
-  }
-
-}
+  };
+};
 
 //setup routes then create folder and test that they are loading properly 

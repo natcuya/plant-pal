@@ -15,7 +15,7 @@ function Result(props) {
       <a className = "result-link" href='/browse'> Browse our plant page and check out other plants! </a>
       </div>
   );
-}
+};
 
 Result.propTypes = {
   quizResult: PropTypes.string.isRequired
