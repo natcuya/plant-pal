@@ -16,7 +16,7 @@ export default class BrowsePage extends React.Component {
         <ul className='PlantSum'> {plants.map(plant =>
             <li key={plant.id}>
             <h2>{plant.name}</h2>
-              <img src={plant.img} />
+            <img src={plant.img} className = "plantimg"/>
                  <p className="content"> Difficulty Level: {plant.type}
                 <br/> {plant.content}
                 </p>
