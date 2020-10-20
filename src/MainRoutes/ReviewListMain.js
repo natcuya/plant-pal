@@ -76,7 +76,6 @@ componentDidMount() {
             type='button'
             className='ReviewListMain__add-note-button'
           >
-            <br />
            Add review
           </CircleButton>
         </div>

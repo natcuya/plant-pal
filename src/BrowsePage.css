@@ -17,6 +17,14 @@
     column-count: 2;
     margin-top: 20px;
 }
+.BrowseistNav__folder-link{
+font-size: 20px;
+margin: 20px;
+color: white;
+padding: 10px;
+background-color: rgb(141, 184, 141);
+text-decoration: none;
+}
 li {
     display: inline-block;
     font-size: 10px;
@@ -65,12 +73,12 @@ h2{
         margin: 0px;
         padding: 0px;
     }
-
-    img{
+    .plantimg {
+        padding: 10px;
         border-radius: 5px;
         width: 200px;
         height: 200px;
-        }
+    }
      
     .plantsum{
      
@@ -83,7 +91,5 @@ h2{
         column-width: 100%;
         border-style: solid ;  
     }
-    p{
-        
-    }
+
 }

@@ -101,11 +101,11 @@ console.log( this.state.reviews)
       <div className="app">
       <section id= "page">
           <header className="App__header">
+          <Nav className='App_nav'>
+                </Nav>
               <h1>
             Plant Pals
               </h1>
-                <Nav className='App_nav'>
-                </Nav>
           </header>
           <main className="App__main">
           <Route exact path='/' component={LandingPage} />

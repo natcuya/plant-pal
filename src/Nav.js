@@ -5,15 +5,17 @@ export default class Nav extends Component {
     render() {
       return (
         <Content className='Nav'>
+
           <a href='/'>
             Home
           </a>
           <a href='/quiz'>
-            Take Our Quiz
+            Take Quiz
           </a>
           <a href='/browse'>
             Browse
           </a>
+
         </Content>
       )
     }

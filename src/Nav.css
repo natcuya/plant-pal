@@ -13,8 +13,27 @@ nav {
 
 
  .Nav a {
-    PADDING: 10px;
-    font-size: 15px;
-    text-transform: uppercase;
+  background-color: rgba(240, 255, 240, 0.726);    
+  text-decoration: none;
+  font-size: 16px;
+  padding: 20px;
+  margin: 20px;
+  color:black;
+  border: 2px solid #F5D49A;
+  font-weight: bold;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+
+    nav{
+
+    }
+    .Nav a {
+      font-size: 16px;
+      padding: 2px;
+      margin: 10px;
+      color:white;
+      }
   }
   
