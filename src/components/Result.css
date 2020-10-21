@@ -1,22 +1,46 @@
 div{
     text-transform: uppercase;
-
 }
 
-.result-link{
-   padding: 8px;
-}
-h3{
-   padding-left: 30%;
-    color:green;
+
+.results{
+font-size: 20px;
+  color: rgb(141, 184, 141);
+  text-shadow: 1px 1px black;
+
 }
 strong{
-    color:green;
+    color: rgb(141, 184, 141);
+    font-size: 25px;
+    padding: 20px;
 }
 i{
-    color:green;
+    color: rgb(141, 184, 141);
 }
 .result-link{
-    font-weight: bold;
-    color:white;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    background-color: rgb(141, 184, 141);
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .result-link{
+        font-size: 16px;
+
+    }
+
+    .results,strong{
+        font-size: 16px;
+        }
+    .results{
+        padding:15px;
+    }
+
+    strong{
+        padding: 5px;
+    }
+    
+
 }

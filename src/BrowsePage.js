@@ -14,18 +14,20 @@ export default class BrowsePage extends React.Component {
     return (
       <div className='BrowseListNav'>
         <ul className='PlantSum'> {plants.map(plant =>
-            <li key={plant.id}>
+            <li key={plant.id} className = "plantNote">
             <h2>{plant.name}</h2>
             <img src={plant.img} className = "plantimg"/>
+            <br/>
+            <Link className='BrowseistNav__folder-link' to={`/plants/${plant.id}`}>
+                Leave a Review
+              </Link> 
                  <p className="content"> Difficulty Level: {plant.type}
                 <br/> {plant.content}
                 </p>
-        <p className='BrowseListNav__num-notes'>
-         Number of Reviews:  {countReviewsForPlant(reviews, plant.id)}
-        </p>
-          <Link className='BrowseistNav__folder-link' to={`/plants/${plant.id}`}>
-                Leave a Review
-            </Link> 
+                <p className='BrowseListNav__num-notes'>
+                Number of Reviews:  {countReviewsForPlant(reviews, plant.id)}
+                <br/>
+              </p>
             </li>
           )}
         </ul>

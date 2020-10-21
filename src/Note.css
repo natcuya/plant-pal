@@ -1,28 +1,39 @@
 .Review_content{
-    font-size: 40px;
+    font-size: 20px;
    text-align: left;
    color: black;
 }
 
 .Review__ratings{
-    padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 
 .Note{
   color:black;
+  font-family: 'Piazzolla', serif;
 }
+
 
 @media only screen and (max-width: 768px) {
 
   .Note{
     font-size: 16px;
+
   }
   .Review_content{
   font-size: 16px;
    color: black;
+   text-transform: none;
 }
 li{
 padding: 0px;
 }
+.Review__ratings{
+  padding: 0px;
+  font-size: 16px;
+  margin: 2px;
+  text-align: center;
+}
+
 }

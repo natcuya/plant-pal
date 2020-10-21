@@ -1,39 +1,46 @@
-
-nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    padding: 1% 0;
-    background-color: #aaa;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    font-size: 1.2pc;
-  }
-
-
- .Nav a {
-  background-color: rgba(240, 255, 240, 0.726);    
-  text-decoration: none;
-  font-size: 16px;
-  padding: 20px;
-  margin: 20px;
-  color:black;
-  border: 2px solid #F5D49A;
-  font-weight: bold;
-  }
-
-
+.navLink {
+  float:left;
+  width:20%;
+  margin:8px;
+ }
+ .navLink a {
+   display: block;
+   font-size: 25px;
+   color: white;
+   text-align: center;
+   padding: 0px 0px;
+   text-decoration: none;
+ }
+ .navSec {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: rgb(141, 184, 141);
+ }
   @media only screen and (max-width: 768px) {
 
-    nav{
-
+    .navLink {
+     float:left;
+     width:20%;
+     margin:8px;
     }
-    .Nav a {
+    .navLink a {
+      display: block;
       font-size: 16px;
-      padding: 2px;
-      margin: 10px;
-      color:white;
-      }
+      color: white;
+      text-align: center;
+      padding: 0px 0px;
+      text-decoration: none;
+    }
+    .navSec {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgb(141, 184, 141);
+    }
+
+
   }
   

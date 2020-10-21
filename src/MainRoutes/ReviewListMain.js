@@ -82,7 +82,7 @@ componentDidMount() {
        
         <ul>
           {reviewsForPlant.map(review =>
-            <li key={review.id}>
+            <li key={review.id} className ="reviewSec">
               <Note
                 id={review.id}
                content={review.content}

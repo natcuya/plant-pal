@@ -4,19 +4,15 @@ import './Nav.css'
 export default class Nav extends Component {
     render() {
       return (
-        <Content className='Nav'>
-
-          <a href='/'>
-            Home
-          </a>
-          <a href='/quiz'>
-            Take Quiz
-          </a>
-          <a href='/browse'>
-            Browse
-          </a>
-
-        </Content>
+        <ul className= "navSec">
+          <li className= "navLink"><a href='/'>Home</a>
+          </li>
+          <li className= "navLink">
+          <a href='/quiz'> Take Quiz</a>
+          </li>
+          <li className= "navLink"><a href='/browse'> Browse</a>
+          </li>
+        </ul>
       )
     }
   }

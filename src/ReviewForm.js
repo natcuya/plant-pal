@@ -29,7 +29,6 @@ export default class ReviewForm extends Component {
             placeholder='Type a review..'>
           </Textarea>
         </div>
-
         <div className='select'>
           <label htmlFor='rating'>Rate this Plant!</label>
           <select
@@ -45,7 +44,6 @@ export default class ReviewForm extends Component {
             <option value='5'>5 Stars</option>
           </select>
         </div>
-
         <Button type='submit'>
           Post review
         </Button>

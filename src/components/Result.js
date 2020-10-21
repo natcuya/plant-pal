@@ -11,8 +11,7 @@ function Result(props) {
         <i className="fas fa-seedling"></i> <strong>{props.quizResult}! </strong><i className="fas fa-seedling"></i>
       </h3>
       <br/>
-      <br/>
-      <a className = "result-link" href='/browse'> Browse our plant page and check out other plants! </a>
+      <a className = "result-link" href='/browse'> Check out Reviews! </a>
       </div>
   );
 };

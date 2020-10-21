@@ -25,14 +25,14 @@ padding: 10px;
 background-color: rgb(141, 184, 141);
 text-decoration: none;
 }
-li {
+.plantNote {
     display: inline-block;
     font-size: 10px;
     width: 95%;
     border-style: solid ;
     padding: 20px;
+    background-color: rgba(240, 255, 240, 0.719);
     margin: 10px;
-    
 }
 
 p{
@@ -47,9 +47,7 @@ p{
 }
 
 .content{
-    background-color: rgba(240, 255, 240, 0.596);
-    border: 2px solid #F5D49A;
-    padding: 20px;
+    padding: 10px;
 }
 ul{
 border: white;
@@ -57,12 +55,6 @@ border: white;
 h2{
     color:#F5D49A;
     text-shadow: 2px 2px black;
-}
-
-@media only screen and (min-width: 300px) {
-    /* For mobile phones: */
-
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -86,10 +78,14 @@ h2{
         padding:0px;
         }
 
-    li {
+    .plantNote{
         font-size: 16px;
         column-width: 100%;
         border-style: solid ;  
     }
+
+    .BrowseistNav__folder-link{
+        font-size: 16px;
+        }
 
 }

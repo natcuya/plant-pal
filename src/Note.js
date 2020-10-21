@@ -39,10 +39,8 @@ class Note extends React.Component {
     const { content, id, rating, } = this.props
     return (
       <div className='Note'>
-        <h3 className='Review_content'>Review: </h3>
-        {content}
-        <h4 className='Review__ratings'>Rating: </h4> 
-        {rating}
+        <h3 className='Review_content'>{content} </h3>
+        <h4 className='Review__ratings'>Rating: {rating} </h4>
       </div>
 
     )

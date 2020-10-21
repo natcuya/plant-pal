@@ -16,32 +16,14 @@
   background-color: #E8C892;
    
   }
-  
-  nav {
-    padding: 0.5% 0;
-  }
-  
-  nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    font-size: 1.2pc;
-  }
+
+
   .App__header h1 {
     color: white;
     text-shadow: 1px 1px black;
+    font-size: 40px;
   }
-  header {
-    font-size: 20px;
-    padding: 25px 15px;
-    background-size: cover;
-    background-repeat:no-repeat;
-    border:white;
-   
-  }
+
   
   p{
       text-align: left;

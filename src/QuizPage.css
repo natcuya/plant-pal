@@ -14,7 +14,6 @@
 li{
 font-size: 15px;
 padding:30px;
-background-color: rgba(240, 255, 240, 0.596);
 }
 .radioCustomLabel{
    font-size: 20px;
@@ -26,6 +25,7 @@ input[type=radio] {
     margin-left: 150px;
 }
 .answerOption {
+  background-color: rgba(240, 255, 240, 0.596);
     display: block;
     margin-bottom:10px;
     padding-top: 20px;
@@ -33,8 +33,10 @@ input[type=radio] {
   }
 .field p{
     text-shadow: none;
+    font-size: 20px;
     text-transform: none;
-  color: black 
+  color: white; 
+  text-shadow: 1px 1px black;
 }
 
 .results {

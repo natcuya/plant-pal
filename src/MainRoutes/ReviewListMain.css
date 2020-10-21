@@ -11,3 +11,20 @@
     background-color: rgb(141, 184, 141);
     text-decoration: none;
 }
+ul{
+    list-style: none;
+}
+.reviewSec{
+    background-color: rgba(240, 255, 240, 0.808);
+    padding:20px;
+    margin:40px;
+    color: black;
+}
+@media only screen and (max-width: 768px) {
+.reviewSec{
+    margin:20px;
+    padding:10px;
+    color: black;
+}
+
+}
